@@ -15,20 +15,33 @@ public class BoidManager : MonoBehaviour {
         foreach (Boid b in boids) {
             b.Initialize (settings, null);
         }
-
+        using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(@"C:\Users\pls19\Boids\simulation_data.txt"))
+        { }
     }
 
     void Update () {
         if (boids != null) {
-
+            string states = "";
             int numBoids = boids.Length;
             var boidData = new BoidData[numBoids];
 
             for (int i = 0; i < boids.Length; i++) {
                 boidData[i].position = boids[i].position;
                 boidData[i].direction = boids[i].forward;
+                if (i < boids.Length - 1) {
+                    states += boids[i].position.ToString();
+                    states += boids[i].forward.ToString();
+                }
+                Debug.Log(boids[i].position);
+                Debug.Log(boids[i].forward);
             }
-
+            Debug.Log(states);
+            using (System.IO.StreamWriter file =
+                new System.IO.StreamWriter(@"C:\Users\pls19\Boids\simulation_data.txt", true))
+            {
+                file.WriteLine(states);
+            }
             var boidBuffer = new ComputeBuffer (numBoids, BoidData.Size);
             boidBuffer.SetData (boidData);
 

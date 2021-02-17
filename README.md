@@ -1,5 +1,5 @@
 # Boids
-Follow SebLague's repo and customize to my project
+Follow SebLague's repo and customize to my project.
 
 A little experiment with boids in Unity:
 https://www.youtube.com/watch?v=bqtqltqcQhw

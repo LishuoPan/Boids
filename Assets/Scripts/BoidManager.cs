@@ -30,8 +30,8 @@ public class BoidManager : MonoBehaviour {
                 boidData[i].position = boids[i].position;
                 boidData[i].direction = boids[i].forward;
                 if (i < boids.Length - 1) {
-                    states += boids[i].position.ToString();
-                    states += boids[i].forward.ToString();
+                    states += boids[i].position.ToString("f7");
+                    states += boids[i].forward.ToString("f7");
                 }
                 Debug.Log(boids[i].position);
                 Debug.Log(boids[i].forward);

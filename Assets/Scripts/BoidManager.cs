@@ -33,10 +33,10 @@ public class BoidManager : MonoBehaviour {
                     states += boids[i].position.ToString("f7");
                     states += boids[i].forward.ToString("f7");
                 }
-                Debug.Log(boids[i].position);
-                Debug.Log(boids[i].forward);
+                //Debug.Log(boids[i].position);
+                //Debug.Log(boids[i].forward);
             }
-            Debug.Log(states);
+            //Debug.Log(states);
             using (System.IO.StreamWriter file =
                 new System.IO.StreamWriter(@"C:\Users\pls19\Boids\simulation_data.txt", true))
             {
